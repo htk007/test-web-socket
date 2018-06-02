@@ -1,0 +1,1 @@
+çalışması için klasörü tümüyle masaüstüne atmak gerekebilir. 

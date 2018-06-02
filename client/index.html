@@ -1,0 +1,34 @@
+
+
+
+
+<input onclick="trackChange(this, document.getElementById('tk').value)" type="submit" value="turk kahvesi" name="Türk Kahvesi" id="tk"></input>
+<input onclick="trackChange(this, 'yemek')" type="submit" value="yemek" name="yemek"></input>
+<input onclick="trackChange(this,'tatli')"  value="tatli" name="Tatlı"></input>
+<input onclick="trackChange(this, 'cay')"  value="cay" name="çay"></input>
+
+
+
+</div>
+
+<script src="http://cdn.socket.io/socket.io-1.7.3.js"></script>
+<script>
+
+
+	var socket =io();
+
+function trackChange(element,siparis)
+{
+var postData={};
+
+		socket.emit('happy',{
+	reason:siparis
+});
+
+
+ socket.on("mesajgitti", function(data){
+              window.alert(data.msg + " siparişiniz alınmıştır");
+            });
+}//trackChange functions ending
+
+</script>

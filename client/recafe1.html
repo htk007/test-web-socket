@@ -1,0 +1,21 @@
+Hello cafe
+
+
+<script src="http://cdn.socket.io/socket.io-1.7.3.js"></script>
+<script>
+	var socket =io();
+	var cafe =function(){
+		socket.emit('cafe',{
+	reason:'cafe is here'
+	});
+	}
+function istekler(){
+
+	socket.on('mesajiAl',function(data){window.alert(data.msg + " siparişi girildi");});
+}
+
+
+</script>
+
+<button onclick="cafe()">CAFE REQ</button>
+<button onclick="istekler()">CAFE GELEN</button>
